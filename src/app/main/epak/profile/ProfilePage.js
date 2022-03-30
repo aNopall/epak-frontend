@@ -86,7 +86,7 @@ function ProfilePage() {
                   variant="h4"
                   color="inherit"
                 >
-                  John Doe
+                  Ahmad Novsl
                 </Typography>
               </motion.div>
 
