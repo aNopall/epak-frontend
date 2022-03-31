@@ -4,7 +4,7 @@ const fuseDark = {
   200: '#92979f',
   300: '#666d78',
   400: '#464e5b',
-  500: '#252f3e',
+  500: '#ffffff',
   600: '#212a38',
   700: '#1b2330',
   800: '#161d28',
@@ -13,7 +13,7 @@ const fuseDark = {
   A200: '#2a6aff',
   A400: '#004af6',
   A700: '#0042dd',
-  contrastDefaultColor: 'light',
+  contrastDefaultColor: 'dark',
 };
 
 export default fuseDark;

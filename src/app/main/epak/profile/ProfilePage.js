@@ -1,150 +1,263 @@
-import FusePageSimple from '@fuse/core/FusePageSimple';
+import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import Box from '@mui/material/Box';
-import AboutTab from './tabs/AboutTab';
-import PhotosVideosTab from './tabs/PhotosVideosTab';
-import TimelineTab from './tabs/TimelineTab';
+import ButtonBase from '@mui/material/ButtonBase';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
-const Root = styled(FusePageSimple)(({ theme }) => ({
-  '& .FusePageSimple-topBg': {
-    background: 'url("assets/images/profile/morain-lake.jpg")!important',
-    backgroundSize: 'cover!important',
-    backgroundPosition: 'center center!important',
-  },
+const Img = styled('img')({
+  margin: 'auto',
+  display: 'block',
+  maxWidth: '100%',
+  maxHeight: '100%',
+});
 
-  '& .FusePageSimple-header': {
-    background: 'none',
-    height: 20,
-    minHeight: 20,
-    [theme.breakpoints.down('lg')]: {
-      height: 40,
-      minHeight: 40,
-    },
-  },
-
-  '& .FusePageSimple-wrapper': {
-    background: 'transparent',
-  },
-
-  '& .FusePageSimple-content': {
-    width: '100%',
-    maxWidth: 1120,
-    margin: 'auto',
-  },
-
-  '& .FusePageSimple-toolbar': {
-    width: '100%',
-    maxWidth: 1120,
-    margin: 'auto',
-    position: 'relative',
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: 'auto',
-    height: 'auto',
-    aliginItesm: 'flex-start',
-  },
-}));
-
-function ProfilePage() {
-  const [selectedTab, setSelectedTab] = useState(0);
-
-  function handleTabChange(event, value) {
-    setSelectedTab(value);
-  }
-
+export default function ProfilePage() {
   return (
-    <Root
-      header={<></>}
-      contentToolbar={
-        <>
-          <div className="w-full px-24 pb-48 flex flex-col md:flex-row flex-1 items-center">
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1, transition: { delay: 0.1 } }}>
-              <Avatar
-                sx={{
-                  borderWidth: 4,
-                  borderStyle: 'solid',
-                  borderColor: 'background.default',
-                }}
-                className="-mt-64  w-128 h-128"
-                src="assets/images/avatars/Velazquez.jpg"
-              />
-            </motion.div>
-            <div className="flex flex-col md:flex-row flex-1 items-center justify-between p-8">
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0, transition: { delay: 0.2 } }}
-              >
-                <Typography
-                  className="md:px-16 text-24 md:text-32 font-semibold tracking-tight"
-                  variant="h4"
-                  color="inherit"
-                >
-                  Ahmad Novsl
-                </Typography>
-              </motion.div>
+    <>
+    <Typography sx={{ fontSize: 28 }} className="font-bold ml-20 mt-20">
+      Identitas Pribadi
+    </Typography>
+    <Paper
+      sx={{
+        p: 5,
+        margin: '50px',
+        backgroundColor: (theme) =>
+          theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+      }}
+    >
+      <Grid container>
+        <Grid item xs={12} sm container>
+          <ButtonBase sx={{ width: 137, height: 192 }}>
+            <Img alt="complex" src="assets/images/logos/red-bg.svg"/>
+          </ButtonBase>
+        </Grid>
+        <Grid item xs={12} sm container>
+          <Grid item xs container direction="column">
+            <Grid item xs>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Nama
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              Asep
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Tanggal Lahir
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              1999-01-13
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Tempat Lahir
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              Jakarta
+            </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} sm container>
+          <Grid item xs container direction="column">
+            <Grid item xs>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Agama
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              Islam
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Jenis Kelamin
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              Laki-laki
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Gol. Darah
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              O
+            </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} sm container>
+          <Grid item xs container direction="column">
+            <Grid item xs>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Email
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              admin@admin.com
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Nomor Telepon
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              08xxxxxxxxxx
+            </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Paper>
 
-              <div className="flex items-center justify-end -mx-4 mt-24 md:mt-0">
-                <Button className="mx-8" variant="contained" color="secondary" aria-label="Follow">
-                  Follow
-                </Button>
-                <Button variant="contained" color="primary" aria-label="Send Message">
-                  Send Message
-                </Button>
-              </div>
-            </div>
-          </div>
-          <Tabs
-            value={selectedTab}
-            onChange={handleTabChange}
-            indicatorColor="primary"
-            textColor="inherit"
-            variant="scrollable"
-            scrollButtons={false}
-            className="w-full px-24 -mx-4 min-h-40"
-            classes={{ indicator: 'flex justify-center bg-transparent w-full h-full' }}
-            TabIndicatorProps={{
-              children: (
-                <Box
-                  sx={{ bgcolor: 'text.disabled' }}
-                  className="w-full h-full rounded-full opacity-20"
-                />
-              ),
-            }}
-          >
-            <Tab
-              className="text-14 font-semibold min-h-40 min-w-64 mx-4 px-12 "
-              disableRipple
-              label="Timeline"
-            />
-            <Tab
-              className="text-14 font-semibold min-h-40 min-w-64 mx-4 px-12 "
-              disableRipple
-              label="About"
-            />
-            <Tab
-              className="text-14 font-semibold min-h-40 min-w-64 mx-4 px-12 "
-              disableRipple
-              label="Photos & Videos"
-            />
-          </Tabs>
-        </>
-      }
-      content={
-        <div className="p-16 sm:p-24">
-          {selectedTab === 0 && <TimelineTab />}
-          {selectedTab === 1 && <AboutTab />}
-          {selectedTab === 2 && <PhotosVideosTab />}
-        </div>
-      }
-    />
+    <Typography sx={{ fontSize: 28 }} className="font-bold ml-20 mt-20">
+      Identitas Guru
+    </Typography>
+    <Paper
+      sx={{
+        p: 5,
+        margin: '50px',
+        backgroundColor: (theme) =>
+          theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+      }}
+    >
+      <Grid container>
+        <Grid item xs={12} sm container>
+          <Grid item xs container direction="column">
+            <Grid item xs>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              NIP
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              196302121993012001
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              NUPTK
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              4534741642300043
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              NRG
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              120271278156
+            </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} sm container>
+          <Grid item xs container direction="column">
+            <Grid item xs>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              No. KAPREG
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              H.067626
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Jabatan
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              Guru Madya
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              TMT Jabatan
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              2013-08-26
+            </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} sm container>
+          <Grid item xs container direction="column">
+            <Grid item xs>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Pangkat
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              IV/b
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              TMT Pangkat
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              2017-10-01
+            </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Paper>
+
+    <Typography sx={{ fontSize: 28 }} className="font-bold ml-20 mt-20">
+      Informasi Tugas Guru
+    </Typography>
+    <Paper
+      sx={{
+        p: 5,
+        margin: '50px',
+        backgroundColor: (theme) =>
+          theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+      }}
+    >
+      <Grid container>
+        <Grid item xs={12} sm container>
+          <Grid item xs container direction="column">
+            <Grid item xs>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Tugas
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              Mengajar Kelas 1
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Jenjang
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              Dikdas
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Sekolah
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              SD 1 Jakarta
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Mulai Bertugas
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              01 Desember 2022
+            </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} sm container>
+          <Grid item xs container direction="column">
+            <Grid item xs>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Alamat Unit Kerja
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              Jl. H Arsyad Jakarta Pusat No.4 Rt.06/07
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Kecamatan
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              Kedungtuban
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Kabupaten
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              Blora
+            </Typography>
+            <Typography sx={{ fontSize: 18 }} color="text.secondary" gutterBottom>
+              Provinsi
+            </Typography>
+            <Typography sx={{ fontSize: 25 }} color="text.primary" className="font-600 mb-20">
+              Jawa Tengah
+            </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Paper>
+    </>
   );
 }
-
-export default ProfilePage;
